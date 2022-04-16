@@ -28,7 +28,7 @@ login_manager.login_view="login"
 # app.config["SQLALCHEMY_DATABASE_URI"] = "mysql:///username:password@localhost/databasename"
 
 #app.config["SQLALCHEMY_DATABASE_URI"] = "mysql://root:@127.0.0.2:3307/medserv"
-app.config["SQLALCHEMY_DATABASE_URI"] = "postgres://rjdesuweipherx:ea71a7f7494f080424afe07b9e6405bbbe31660b70dbaebd6a446ac84ea2d683@ec2-52-203-118-49.compute-1.amazonaws.com:5432/d3lv9ts4qe193o"
+app.config["SQLALCHEMY_DATABASE_URI"] = "postgres://wqyhnamgjagypy:eecc88a24bbdecfcdca88fd04e8546e7700c3b81b44d741fbb539dbe753c23ee@ec2-34-194-158-176.compute-1.amazonaws.com:5432/dfk39eri6aqujp"
 db = SQLAlchemy(app) 
 
 
