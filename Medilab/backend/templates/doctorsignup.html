@@ -1,0 +1,129 @@
+{% extends 'baselogin.html'%}
+{% block title%} Doctor Signup{% endblock title%}
+{% block form %}
+    
+<div class="section-title">
+    <h2>Sign Up</h2>
+    {% include "messages.html" %}
+    <!-- <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p> -->
+</div>
+
+<div class="row">
+    <!-- <div class="col-md-4"></div> -->
+    <div class="col-md-12"></div>
+    <div class="col-md-12">
+        <form action="/doctorsignup" method="post" role="form" >
+            <!-- first -->
+            <div class="row">
+              <div class="col-md-4 form-group">
+                <input type="text" name="dname" class="form-control" id="uname" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" required>
+                <div class="validate"></div>
+              </div>
+              <div class="col-md-4 form-group mt-3 mt-md-0">
+                <input type="email" class="form-control" name="dmail" id="umail" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" required>
+                <div class="validate"></div>
+              </div>
+              <div class="col-md-4 form-group mt-3 mt-md-0">
+                <input type="tel" class="form-control" name="dphone" id="uphone" placeholder="Your Phone" data-rule="minlen:4" data-msg="Please enter at least 4 chars" required>
+                <div class="validate"></div>
+              </div>
+            </div>
+            <!-- second -->
+            <div class="row">
+              <div class="col-md-4 form-group mt-3">
+                <input type="date" name="ddob" class="form-control" id="ddob" placeholder="DOB" data-rule="minlen:4" data-msg="Please enter at least 4 chars" required>
+                <div class="validate"></div>
+              </div>
+              <div class="col-md-4 form-group mt-3">
+                <select name="dgender" id="department" class="form-select">
+                  <option value="">Gender</option>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                  <option value="others">Others</option>
+                </select>
+                <div class="validate"></div>
+              </div>
+              <div class="col-md-4 form-group mt-3">
+                <input type="tel" class="form-control" name="adphone" id="adphone" placeholder="Alternate Phone" data-rule="minlen:4" data-msg="Please enter at least 4 chars" required>
+                <div class="validate"></div>
+              </div>
+            </div>
+
+            <!-- third -->
+            <div class="row">
+                <div class="col-md-4 form-group mt-3">
+                    <input type="number" class="form-control" name="daa" id="da" placeholder="Enter Your Aadhar" data-rule="minlen:4" data-msg="Please enter at least 4 chars" required>
+                    <div class="validate"></div>
+                  </div>
+                <div class="col-md-4 form-group mt-3">
+                    <input type="text" class="form-control" name="dcs" id="cupass" placeholder="Enter Your State" data-rule="minlen:4" data-msg="Please enter at least 4 chars" required>
+                    <div class="validate"></div>
+                  </div>
+                <div class="col-md-4 form-group mt-3">
+                  <input type="text" class="form-control" name="dgu" id="upin" placeholder=" Your Graduation University/college Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" required>
+                  <div class="validate"></div>
+                </div>
+              </div>
+              <!-- fourt -->
+              <div class="row">
+                <div class="col-md-4 form-group mt-3">
+                    <input type="number" class="form-control" name="dyog" id="upass" placeholder="Year Of Graduation" data-rule="minlen:4" data-msg="Please enter at least 4 chars" required>
+                    <div class="validate"></div>
+                  </div>
+                <div class="col-md-4 form-group mt-3">
+                    <input type="password" class="form-control" name="dus" id="cupass" placeholder="Your University State" data-rule="minlen:4" data-msg="Please enter at least 4 chars" required>
+                    <div class="validate"></div>
+                  </div>
+                <div class="col-md-4 form-group mt-3">
+                  <input type="text" class="form-control" name="duprn" id="upin" placeholder=" Enter your UPRN " data-rule="minlen:4" data-msg="Please enter at least 4 chars" required>
+                  <div class="validate"></div>
+                </div>
+              </div>
+              <!-- fifth -->
+            <div class="row">
+                <div class="col-md-4 form-group mt-3">
+                    <input type="password" class="form-control" name="dpass" id="upass" placeholder="Enter Your password" data-rule="minlen:4" data-msg="Please enter at least 4 chars" required>
+                    <div class="validate"></div>
+                  </div>
+                <div class="col-md-4 form-group mt-3">
+                    <input type="password" class="form-control" name="cdpass" id="cupass" placeholder="Confirm Your password" data-rule="minlen:4" data-msg="Please enter at least 4 chars" required>
+                    <div class="validate"></div>
+                  </div>
+                <div class="col-md-4 form-group mt-3">
+                  <input type="file" class="form-control" name="dfile" id="dpin" placeholder="Upload Doctor Identity" data-rule="minlen:4" data-msg="Please enter at least 4 chars" required>
+                  <div class="validate"></div>
+                </div>
+              </div>
+            
+  
+            <div class="form-group mt-3">
+                <input type="text" class="form-control" name="dcaddress" id="ucaddress" placeholder=" Your Current Address" data-rule="minlen:4" data-msg="Please enter at least 4 chars" required>
+                <div class="validate"></div>
+            </div>
+            <div class="form-group mt-3">
+                <input type="text" class="form-control" name="dpaddress" id="upaddress" placeholder=" Your Permanent Address" data-rule="minlen:4" data-msg="Please enter at least 4 chars" required>
+                <div class="validate"></div>
+            </div>
+            <div class="form-check">
+                <br>
+                <br>
+                <input type="checkbox" class="form-check-input" id="exampleCheck1" required>
+                <label class="form-check-label" for="exampleCheck1">The above filled detail will be varify by Government.I declare that the information is given by is true.</label>
+              </div>
+            
+            <div class="text-center">
+                <br>
+                <button type="submit" class="btn btn-primary btn-rounded">Sign Up</button>
+                
+            </div>
+           
+            
+          </form>
+          <div class="text-center">
+            <br>
+            Already a User <span><a class= "text-bold" href="/login"> Click Here to <strong>Log In</strong> </a></span>
+            
+        </div>
+    </div>
+</div>
+{% endblock form %}

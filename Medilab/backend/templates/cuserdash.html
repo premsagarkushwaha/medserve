@@ -1,0 +1,230 @@
+{% extends 'userdashboard.html' %}
+
+{% block title%}
+{{current_user.uphone}}
+{% endblock title%}
+
+
+{% block messager %}
+
+{% endblock messager %}
+
+{% block nav %}
+<div class="l-navbar" id="nav-bar">
+  <nav class="nav">
+      <div> <a href="#" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span class="nav_logo-name">{{current_user.uname}}</span> </a>
+          <div class="nav_list"> <a href="/userdash" class="nav_link active"> <i class='bx bx-grid-alt nav_icon'></i> <span class="nav_name">Dashboard</span> </a> <a href="/cusers" class="nav_link"> <i class='bx bx-user nav_icon'></i> <span class="nav_name">Users</span> </a> <a href="#" class="nav_link"> <i class='bx bx-message-square-detail nav_icon'></i> <span class="nav_name">Messages</span> </a> <a href="#" class="nav_link"> <i class='bx bx-bookmark nav_icon'></i> <span class="nav_name">Bookmark</span> </a> <a href="#" class="nav_link"> <i class='bx bx-folder nav_icon'></i> <span class="nav_name">Files</span> </a> <a href="#" class="nav_link"> <i class='bx bx-bar-chart-alt-2 nav_icon'></i> <span class="nav_name">Stats</span> </a> </div>
+      </div> <a href="/logout" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span class="nav_name">SignOut</span> </a>
+  </nav>
+</div>
+{% endblock nav %}
+
+{% block body %}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
+<link href="static/assets/css/cusers.css" rel="stylesheet">
+<div class="content">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <!-- meta -->
+                <div class="profile-user-box card-box bg-custom">
+                    <div class="row">
+                        
+                        <div class="col-sm-6">
+                            <div class="text-right">
+                                <button type="button" class="btn btn-light waves-effect"><i class="mdi mdi-account-settings-variant mr-1"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--/ meta -->
+            </div>
+        </div>
+        <!-- end row -->
+        <div class="row">
+            <div class="col-xl-4">
+                <!-- Personal-Information -->
+                <div class="card-box">
+                  {% include "messages.html" %}
+                    <h4 class="header-title mt-0 text-center"><strong>Add disease</strong>  </h4>
+                    <div class="panel-body">
+                      <br>
+                      <form action="" method="post" role="form">
+                        <!-- Text input -->
+                        <div class="form-outline mb-4">
+                          <input type="email" id="form6Example3" name="email" class="form-control" value="{{current_user.umail}}" readonly/>
+                          <label class="form-label" for="form6Example3"><E-mail>E-mail</E-mail></label>
+
+                          <input type="text" id="form6Example3" name="uname" class="form-control" value="{{current_user.uname}}" readonly/>
+                          <label class="form-label" for="form6Example3"><E-mail>User Name</E-mail></label>
+                        </div>
+                        <!-- 2 column grid layout with text inputs for the first and last names -->
+                        <div class="row mb-4">
+                          <div class="col">
+                            <div class="form-outline">
+                              <input type="text" id="form6Example1" name="udis" class="form-control" />
+                              <label class="form-label" for="form6Example1">Disease name</label>
+                            </div>
+                          </div>
+                          <div class="col">
+                            <div class="form-outline">
+                              <input type="date" id="form6Example2" name="utd" class="form-control" />
+                              <label class="form-label" for="form6Example2">Treatment Date</label>
+                            </div>
+                          </div>
+                        </div>
+                      
+                        <!-- Text input -->
+                        <div class="form-outline mb-4">
+                          <input type="text" id="form6Example3" name="uhc" class="form-control" />
+                          <label class="form-label" for="form6Example3">Hospital/Clinic </label>
+                        </div>
+                      
+                        <!-- Text input -->
+                        <div class="form-outline mb-4">
+                          <input type="text" id="form6Example4" name="udocn" class="form-control" />
+                          <label class="form-label" for="form6Example4">Doctor Name</label>
+                        </div>
+                      
+                        <!-- Email input -->
+                        <div class="form-outline mb-4">
+                          <input type="text" id="form6Example5"  name="udloc" class="form-control" />
+                          <label class="form-label" for="form6Example5">Location</label>
+                        </div>
+                      
+                        <!-- Number input -->
+                        <div class="form-outline mb-4">
+                          <input type="tel" id="form6Example6" name="udcon" class="form-control" />
+                          <label class="form-label" for="form6Example6">doctor E-mail</label>
+                        </div>
+                      
+                        <!-- Message input -->
+                        <div class="form-outline mb-4">
+                          <textarea class="form-control" id="form6Example7" name="umed" rows="4"></textarea>
+                          <label class="form-label" for="form6Example7">Treatment Medicines</label>
+                        </div>
+                      
+                        <!-- Checkbox -->
+                        <!-- <div class="form-check d-flex justify-content-center mb-4">
+                          <input class="form-check-input me-2" type="checkbox" value="" id="form6Example8" checked />
+                          <label class="form-check-label" for="form6Example8"> Create an account? </label>
+                        </div> -->
+                      
+                        <!-- Submit button -->
+                        <button type="submit" class="btn btn-primary btn-block mb-4 text-center">Add Disease</button>
+                      </form>
+                        <ul class="social-links list-inline mt-4 mb-0">
+                            <li class="list-inline-item"><a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="" data-original-title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                            <li class="list-inline-item"><a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="" data-original-title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                            <li class="list-inline-item"><a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="" data-original-title="Skype"><i class="fa fa-skype"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Personal-Information -->
+                <div class="card-box ribbon-box">
+                    <div class="ribbon ribbon-primary"></div>
+                    <div class="clearfix"></div>
+                    <div class="inbox-widget">
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-8">
+                
+                <!-- end row -->
+                <div class="card-box">
+                  {% if postsdata|length >0 %}
+                    <h4 class="header-title mt-0 mb-3">Recent Disease</h4>
+                    <div class="">
+                        <div class="">
+                            <h5 class="text-custom">{{postsdata[-1].udis}}</h5>
+                            <p class="mb-0">Dr. {{postsdata[-1].udocn}} , {{postsdata[-1].udloc}}</p>
+                            <p><b>{{postsdata[-1].utd}}</b></p>
+                            <p class="text-muted font-13 mb-0"><strong>Medicines : </strong>{{postsdata[-1].umed}}</p>
+                        </div>
+                        <hr>
+                        
+                    </div>
+                    {% else %}
+                    <h4 class="header-title mt-0 mb-3">Recent Disease</h4>
+                    <div class="">
+                        <div class="">
+                            latest disease will show here
+                            
+                        </div>
+                        <hr>
+                        
+                    </div>
+                    {% endif %}
+                </div>
+                <div class="card-box">
+                    <h4 class="header-title mb-3">Past Disease</h4>
+                    <div class="table-responsive">
+                      <table class="table align-middle mb-0 bg-white">
+                        <thead class="bg-light">
+                          <tr>
+                            <th>Name</th>
+                            <th>Consultant</th>
+                            <th>Location</th>
+                            <th>Contact</th>
+                            <th>Actions</th>
+                          </tr>
+                        </thead>
+                        
+                        <tbody>
+                          {% for row in postsdata%}
+                          <tr>
+                            <td>
+                              <div class="d-flex align-items-center">
+                                <!-- <img
+                                    src="https://mdbootstrap.com/img/new/avatars/8.jpg"
+                                    alt=""
+                                    style="width: 45px; height: 45px"
+                                    class="rounded-circle"
+                                    /> -->
+                                <div class="ms-3">
+                                  <p class="fw-bold mb-1">{{row.udis}}</p>
+                                  <p class="text-muted mb-0">{{row.utd}}</p>
+                                </div>
+                              </div>
+                            </td>
+                            <td>
+                              <p class="fw-normal mb-1">Dr. {{row.udocn}}</p>
+                              <p class="text-muted mb-0">{{row.uhc}}</p>
+                            </td>
+                            <td>
+                              <span>{{row.udloc}}</span>
+                            </td>
+                            <td>{{row.udcon}}</td>
+                            <td>
+                              <button type="button" class="btn btn-link btn-sm btn-rounded">
+                                
+                              </button>{{row.umed}}
+                            </td>
+                          </tr>
+                          {% endfor %}
+                        </tbody>
+                       
+
+                      </table>
+                    </div>
+                </div>
+            </div>
+            <!-- end col -->
+        </div>
+        <!-- end row -->
+    </div>
+    <!-- container -->
+</div>
+
+{% endblock body %}
+
+{% block currentuser %}
+{{current_user.uname}}
+{% endblock currentuser %}
+
+{% block currentuserw %}
+{{current_user.uname}}
+{% endblock currentuserw %}

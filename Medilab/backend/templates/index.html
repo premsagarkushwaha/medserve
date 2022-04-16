@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title%}
+Dashboard
+{% endblock title%}
+
+
+
+{% block total1%}
+{{postsdata[0]}}
+{% endblock total1%}
+
+{% block total2%}
+{{postsdata[1]}}
+{% endblock total2%}
+
+{% block body %}
+
+{% include "messages.html" %}
+
+{% endblock body %}
